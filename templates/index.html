@@ -1,0 +1,36 @@
+{% extends "_layout.html" %} {% set active_page = "home" %} {% block title %}
+Home {% endblock %} {% block body %}
+<section>
+  <div class="mx-auto max-w-screen-xl px-4 py-16 lg:flex items-center">
+    <div class="mx-auto max-w-xl text-center">
+      <h1 class="text-3xl font-extrabold sm:text-5xl">
+        Welcome to Dylan's
+        <strong class="font-extrabold text-teal-700 sm:block">
+          Event Planner.
+        </strong>
+      </h1>
+
+      <p class="mt-4 sm:text-xl/relaxed">
+        This is a test app to help Krevat's ITSC 3155, Software Engineering,
+        course learn about Flask, Pytest, and Tailwind CSS
+      </p>
+
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a
+          class="inline-block rounded bg-teal-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-teal-500"
+          href="/events/new"
+        >
+          Register for an Event
+        </a>
+
+        <a
+          class="inline-block rounded border border-current px-8 py-3 text-sm font-medium text-teal-600 transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:text-teal-500"
+          href="/events"
+        >
+          View Registered User's
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

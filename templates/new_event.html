@@ -1,0 +1,59 @@
+{% extends "_layout.html" %} {% set active_page = "new_event" %} 
+{% block title %}
+  Register Event 
+{% endblock %} 
+
+{% block body %}
+<div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-lg text-center">
+    <h1 class="text-2xl font-bold sm:text-3xl">Register for an Event</h1>
+  </div>
+
+  <form
+    action="/events/new"
+    method="POST"
+    class="mx-auto mb-0 mt-8 max-w-md space-y-4"
+  >
+    <div>
+      <label for="name" class="block text-xs font-medium text-gray-700"
+        >Name</label
+      >
+
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Dylan Halstead"
+        required
+        class="mt-1 w-full rounded-md border border-gray-200 shadow-sm sm:text-sm p-3"
+      />
+    </div>
+    <div>
+      <label for="event_id" class="block text-xs font-medium text-gray-700"
+        >Events</label
+      >
+    
+      <select
+        name="event_id"
+        id="event_id"
+        class="mt-1 w-full rounded-md border border-gray-200 text-gray-700 shadow-sm sm:text-sm p-3 bg-white"
+      >
+        <option value="">Please select</option>
+        {% for event_id, event in events.items() %}
+          <option value="{{ event_id }}">{{ event.name }}</option>
+        {% endfor %}
+      </select>
+    </div>  
+
+    <div class="flex items-center justify-between">
+      <button
+        type="submit"
+        class="inline-block rounded border border-teal-600 px-12 py-3 text-sm font-medium text-teal-600 hover:bg-teal-600 hover:text-white focus:outline-none focus:ring active:bg-teal-500 transition duration-100 ease-in-out"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
